@@ -14,11 +14,13 @@ window.onload = function() {
 function endGame() {
     for (let r = 0; r < rows; r++) {
         for (let c = 0; c < columns; c++) {
-            tile.id = r.toString() + "-" + c.toString();
-            let element = document.getElementById(tile.id);
-            element.parentNode.removeChild(element);
+            board[r][c] = 0;
+            let tile = document.getElementById(r.toString() + "-" + c.toString())
+            tile.remove()
         }
     }
+    score = 0;
+    document.getElementById("score").innerText = score;
 }
 function setGame() {
 
@@ -45,7 +47,7 @@ function setGame() {
 
 function updateTile(tile, num) {
     tile.innerText = "";
-    tile.classList.value = ""; //clear the classList
+    tile.classList.value = "";
     tile.classList.add("tile");
     if (num > 0) {
         tile.innerText = num.toString();

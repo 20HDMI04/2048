@@ -39,6 +39,7 @@ hr{
     font-weight: bold;
     font-family: Arial, Helvetica, sans-serif;
     color: #727371;
+    cursor: pointer;
 }
 #flexbox{
     display: flex;
